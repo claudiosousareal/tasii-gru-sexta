@@ -1,11 +1,11 @@
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize(
-    "escola",
-    "root",
-    "root",
+    process.env.DATABASE,
+    process.env.USER,
+    process.env.PASSWORD,
     {
-        host: "localhost",
-        dialect: "mysql"
+        host: process.env.HOST,
+        dialect: process.env.DIALECT
     }
 );
 sequelize.sync()
